@@ -1,21 +1,25 @@
 import React, { useState } from 'react';
-import { IconMail } from './Icons';
+import { IconMail, IconChevronDown, IconChevronUp, IconSparkles } from './Icons';
 import { COMMITTEE_MEMBERS } from '../data/committeeData';
 
 export default function CommitteeSection() {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [isVacantFolderOpen, setIsVacantFolderOpen] = useState(false);
+
+  const activeMembers = COMMITTEE_MEMBERS.filter((m) => !m.isVacant);
+  const vacantMembers = COMMITTEE_MEMBERS.filter((m) => m.isVacant);
 
   const categories = [
-    { id: 'all', label: 'All Officers' },
+    { id: 'all', label: 'All Active' },
     { id: 'exec', label: 'Executive' },
     { id: 'social', label: 'Social' },
     { id: 'reps', label: 'Representatives & EDI' },
     { id: 'operations', label: 'IT & Sports' }
   ];
 
-  const filteredMembers = selectedCategory === 'all'
-    ? COMMITTEE_MEMBERS
-    : COMMITTEE_MEMBERS.filter((m) => m.category === selectedCategory);
+  const filteredActive = selectedCategory === 'all'
+    ? activeMembers
+    : activeMembers.filter((m) => m.category === selectedCategory);
 
   return (
     <section id="committee" className="content-section section-alternate">
@@ -24,7 +28,7 @@ export default function CommitteeSection() {
           <span className="section-badge">Leadership &amp; Representation</span>
           <h2 className="section-title">MCR Committee</h2>
           <p className="section-subtitle max-w-700">
-            The MCR Committee is an elected group of volunteers who cater to the needs of our members academically and socially. The MCR also liaises with the Jesus College Governing Body, other College Committees, the Senior Common Room (SCR), the Junior Common Room (JCR), and the MCRs at other Colleges on a variety of matters that concern our members.
+            The MCR Committee is an elected group of volunteers who cater to the needs of our members academically and socially, and liaise with the College Governing Body and SCR.
           </p>
           <div className="section-divider" />
         </div>
@@ -42,7 +46,7 @@ export default function CommitteeSection() {
         </div>
 
         <div className="committee-grid">
-          {filteredMembers.map((member) => (
+          {filteredActive.map((member) => (
             <div key={member.id} className="committee-card">
               <div className="committee-img-box">
                 <img
@@ -65,14 +69,16 @@ export default function CommitteeSection() {
               <div className="committee-info">
                 <h3 className="committee-name">{member.name}</h3>
 
-                <a
-                  href={`mailto:${member.email}`}
-                  className="committee-email-link"
-                  title={`Email ${member.name}`}
-                >
-                  <IconMail size={14} />
-                  <span>{member.email}</span>
-                </a>
+                {member.email && (
+                  <a
+                    href={`mailto:${member.email}`}
+                    className="committee-email-link"
+                    title={`Email ${member.name}`}
+                  >
+                    <IconMail size={14} />
+                    <span>{member.email}</span>
+                  </a>
+                )}
 
                 <p className="committee-bio">
                   {member.bio}
@@ -81,6 +87,75 @@ export default function CommitteeSection() {
             </div>
           ))}
         </div>
+
+        {vacantMembers.length > 0 && (
+          <div className="vacant-folder-wrapper">
+            <button
+              className="vacant-folder-toggle"
+              onClick={() => setIsVacantFolderOpen(!isVacantFolderOpen)}
+              aria-expanded={isVacantFolderOpen}
+            >
+              <div className="vacant-toggle-left">
+                <span className="vacant-folder-icon">📂</span>
+                <div>
+                  <h4 className="vacant-toggle-title">
+                    Vacant Committee Positions ({vacantMembers.length})
+                  </h4>
+                  <p className="vacant-toggle-subtitle">
+                    {isVacantFolderOpen
+                      ? 'Click to collapse vacant positions folder'
+                      : 'Looking to get involved? Click to view open roles and opportunities to join the team'}
+                  </p>
+                </div>
+              </div>
+
+              <div className="vacant-toggle-indicator">
+                {isVacantFolderOpen ? <IconChevronUp size={20} /> : <IconChevronDown size={20} />}
+              </div>
+            </button>
+
+            {isVacantFolderOpen && (
+              <div className="vacant-folder-content">
+                <div className="vacant-intro-banner">
+                  <IconSparkles size={20} className="vacant-banner-icon" />
+                  <div>
+                    <h5 className="vacant-banner-heading">Get Involved in the Jesus MCR</h5>
+                    <p className="vacant-banner-text">
+                      The roles below are currently vacant and open for co-option or upcoming elections. If you are interested in taking on one of these positions or learning more about the responsibilities, please email{' '}
+                      <a href="mailto:mcr.president@jesus.ox.ac.uk" className="vacant-banner-link">
+                        mcr.president@jesus.ox.ac.uk
+                      </a>.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="vacant-cards-grid">
+                  {vacantMembers.map((vacant) => (
+                    <div key={vacant.id} className="vacant-role-card">
+                      <div className="vacant-card-top">
+                        <span className="vacant-status-badge">Open Position</span>
+                        <span className="vacant-category-tag">{vacant.category}</span>
+                      </div>
+
+                      <h4 className="vacant-role-name">{vacant.role}</h4>
+                      <p className="vacant-role-desc">{vacant.bio}</p>
+
+                      <div className="vacant-card-footer">
+                        <a
+                          href={`mailto:mcr.president@jesus.ox.ac.uk?subject=Interest%20in%20${encodeURIComponent(vacant.role)}%20Position`}
+                          className="btn btn-sm btn-outline vacant-apply-btn"
+                        >
+                          <IconMail size={14} />
+                          <span>Inquire About Role</span>
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </section>
   );

@@ -96,27 +96,10 @@ export const CONTACT_DATA = {
     postcode: 'OX1 3DW',
     country: 'United Kingdom'
   },
-  email: 'mcr.secretary@jesus.ox.ac.uk',
-  presidentEmail: 'mcr.president@jesus.ox.ac.uk',
-  lodgePhone: '+44 (0)1865 279700',
-  socials: [
-    {
-      name: 'Instagram',
-      handle: '@jesuscollege_mcr',
-      url: 'https://instagram.com/jesuscollege_mcr',
-      icon: 'instagram'
-    },
-    {
-      name: 'Facebook Group',
-      handle: 'Jesus College MCR',
-      url: 'https://www.facebook.com/groups/jesuscollegemcr/',
-      icon: 'facebook'
-    },
-    {
-      name: 'X (Twitter)',
-      handle: '@JesusOxMCR',
-      url: 'https://twitter.com/JesusOxMCR',
-      icon: 'twitter'
-    }
-  ]
+  email: 'mcr.president@jesus.ox.ac.uk',
+  instagram: {
+    name: 'Instagram',
+    handle: '@jesuscollege_mcr',
+    url: 'https://instagram.com/jesuscollege_mcr'
+  }
 };

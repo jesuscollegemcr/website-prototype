@@ -3,10 +3,7 @@ import Crest from './Crest';
 import {
   IconMapPin,
   IconMail,
-  IconPhone,
-  IconInstagram,
-  IconFacebook,
-  IconTwitter
+  IconInstagram
 } from './Icons';
 import { CONTACT_DATA } from '../data/siteData';
 
@@ -88,7 +85,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="footer-heading">Location &amp; Porters</h4>
+            <h4 className="footer-heading">Location</h4>
             <div className="footer-contact-list">
               <div className="footer-contact-item">
                 <IconMapPin size={18} className="footer-icon" />
@@ -101,42 +98,20 @@ export default function Footer() {
                 <IconMail size={16} className="footer-icon" />
                 <a href={`mailto:${CONTACT_DATA.email}`}>{CONTACT_DATA.email}</a>
               </div>
-              <div className="footer-contact-item">
-                <IconPhone size={16} className="footer-icon" />
-                <span>Porters&rsquo; Lodge: {CONTACT_DATA.lodgePhone}</span>
-              </div>
             </div>
           </div>
 
           <div>
-            <h4 className="footer-heading">Connect With Us</h4>
+            <h4 className="footer-heading">Instagram</h4>
             <div className="footer-social-links">
               <a
-                href="https://instagram.com/jesuscollege_mcr"
+                href={CONTACT_DATA.instagram.url}
                 target="_blank"
                 rel="noreferrer"
                 className="social-badge"
               >
                 <IconInstagram size={18} />
-                <span>@jesuscollege_mcr</span>
-              </a>
-              <a
-                href="https://www.facebook.com/groups/jesuscollegemcr/"
-                target="_blank"
-                rel="noreferrer"
-                className="social-badge"
-              >
-                <IconFacebook size={18} />
-                <span>Jesus College MCR Facebook</span>
-              </a>
-              <a
-                href="https://twitter.com/JesusOxMCR"
-                target="_blank"
-                rel="noreferrer"
-                className="social-badge"
-              >
-                <IconTwitter size={18} />
-                <span>@JesusOxMCR</span>
+                <span>Follow us on Instagram</span>
               </a>
             </div>
           </div>

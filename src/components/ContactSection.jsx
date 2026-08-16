@@ -2,11 +2,9 @@ import React from 'react';
 import {
   IconMapPin,
   IconMail,
-  IconPhone,
   IconInstagram,
-  IconFacebook,
-  IconTwitter,
-  IconArrowRight
+  IconArrowRight,
+  IconExternalLink
 } from './Icons';
 import { CONTACT_DATA } from '../data/siteData';
 
@@ -51,7 +49,7 @@ export default function ContactSection() {
             </div>
             <h3 className="contact-card-title">General Inquiries</h3>
             <p className="contact-card-detail">
-              For administrative, constitutional, or general inquiries:
+              For administrative or general graduate inquiries:
             </p>
             <a
               href={`mailto:${CONTACT_DATA.email}`}
@@ -59,63 +57,24 @@ export default function ContactSection() {
             >
               {CONTACT_DATA.email}
             </a>
-            <div style={{ marginTop: '12px', fontSize: '0.875rem' }}>
-              <span>President: </span>
-              <a
-                href={`mailto:${CONTACT_DATA.presidentEmail}`}
-                style={{ color: 'var(--color-primary)', fontWeight: 600 }}
-              >
-                {CONTACT_DATA.presidentEmail}
-              </a>
-            </div>
           </div>
 
           <div className="contact-card">
             <div className="contact-icon-box">
-              <IconPhone size={24} />
+              <IconInstagram size={24} />
             </div>
-            <h3 className="contact-card-title">Porters&rsquo; Lodge</h3>
+            <h3 className="contact-card-title">Follow Us on Instagram</h3>
             <p className="contact-card-detail">
-              The main college lodge is staffed 24/7 for key access, parcel collection, and emergencies:
+              Stay up to date with photos, events, and MCR community updates:
             </p>
-            <p className="contact-phone-number">
-              {CONTACT_DATA.lodgePhone}
-            </p>
-          </div>
-        </div>
-
-        <div className="contact-social-banner">
-          <div className="social-banner-text">
-            <h3>Follow the Jesus MCR Community</h3>
-            <p>Stay up to date with photos, announcements, and informal social activities on our channels:</p>
-          </div>
-          <div className="social-banner-links">
             <a
-              href="https://instagram.com/jesuscollege_mcr"
+              href={CONTACT_DATA.instagram.url}
               target="_blank"
               rel="noreferrer"
-              className="btn btn-social"
+              className="contact-card-link"
             >
-              <IconInstagram size={18} />
-              <span>Instagram</span>
-            </a>
-            <a
-              href="https://www.facebook.com/groups/jesuscollegemcr/"
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-social"
-            >
-              <IconFacebook size={18} />
-              <span>Facebook Group</span>
-            </a>
-            <a
-              href="https://twitter.com/JesusOxMCR"
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-social"
-            >
-              <IconTwitter size={18} />
-              <span>Twitter / X</span>
+              <span>{CONTACT_DATA.instagram.handle}</span>
+              <IconExternalLink size={14} />
             </a>
           </div>
         </div>
