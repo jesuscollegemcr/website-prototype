@@ -1,206 +1,159 @@
 import React from 'react';
 import Crest from './Crest';
-import { IconMapPin, IconMail, IconHeart } from './Icons';
+import {
+  IconMapPin,
+  IconMail,
+  IconPhone,
+  IconInstagram,
+  IconFacebook,
+  IconTwitter
+} from './Icons';
+import { CONTACT_DATA } from '../data/siteData';
 
-export default function Footer({ setActivePage }) {
-  const handleLink = (pageId) => {
-    setActivePage(pageId);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+export default function Footer() {
+  const handleScrollTo = (e, targetId) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   return (
-    <footer style={{
-      background: 'var(--color-primary-deep)',
-      color: '#FFFFFF',
-      borderTop: '3px solid var(--color-gold)',
-      paddingTop: '60px',
-      paddingBottom: '36px'
-    }}>
+    <footer className="site-footer">
       <div className="container">
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-          gap: '40px',
-          marginBottom: '48px'
-        }}>
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '16px' }}>
-              <Crest size={48} />
+        <div className="footer-grid">
+          <div className="footer-brand-col">
+            <div className="footer-brand">
+              <Crest size={46} />
               <div>
-                <h3 style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: '1.2rem',
-                  letterSpacing: '0.04em',
-                  color: 'var(--color-gold-light)'
-                }}>
-                  JESUS COLLEGE MCR
-                </h3>
-                <p style={{ fontSize: '0.8rem', opacity: 0.8, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                  Middle Common Room • Oxford
-                </p>
+                <h3 className="footer-title">JESUS COLLEGE MCR</h3>
+                <p className="footer-sub">Middle Common Room • Oxford</p>
               </div>
             </div>
-            <p style={{ fontSize: '0.875rem', opacity: 0.85, lineHeight: 1.65, marginBottom: '18px' }}>
-              The vibrant postgraduate home of Jesus College in the University of Oxford. Supporting over 350 DPhil, Master's, and graduate scholars from over 50 countries.
+            <p className="footer-desc">
+              The Middle Common Room (MCR) is the postgraduate community of Jesus College in the University of Oxford, representing over 300 graduate scholars and researchers.
             </p>
-            <p style={{
-              fontFamily: 'var(--font-serif)',
-              fontStyle: 'italic',
-              fontSize: '0.85rem',
-              color: 'var(--color-gold-light)',
-              opacity: 0.95
-            }}>
-              "Floreat Ecclesia, Vivat Rex, Habeat Jesus Gloriam"
+            <p className="footer-motto">
+              &ldquo;Floreat Ecclesia, Vivat Rex, Habeat Jesus Gloriam&rdquo;
             </p>
           </div>
 
           <div>
-            <h4 style={{
-              fontSize: '0.95rem',
-              fontWeight: 700,
-              textTransform: 'uppercase',
-              letterSpacing: '0.08em',
-              color: 'var(--color-gold-light)',
-              marginBottom: '16px',
-              borderBottom: '1px solid rgba(197, 155, 39, 0.3)',
-              paddingBottom: '8px'
-            }}>
-              Quick Navigation
-            </h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.875rem' }}>
+            <h4 className="footer-heading">Navigation</h4>
+            <ul className="footer-links">
               <li>
-                <button
-                  onClick={() => handleLink('events')}
-                  style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.85)', cursor: 'pointer', padding: 0, font: 'inherit' }}
-                >
-                  &rarr; Term Card &amp; Events
-                </button>
+                <a href="#home" onClick={(e) => handleScrollTo(e, 'home')}>
+                  Home
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => handleLink('freshers')}
-                  style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.85)', cursor: 'pointer', padding: 0, font: 'inherit' }}
-                >
-                  &rarr; Freshers’ Guide &amp; Glossary
-                </button>
+                <a href="#about" onClick={(e) => handleScrollTo(e, 'about')}>
+                  About Us
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => handleLink('committee')}
-                  style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.85)', cursor: 'pointer', padding: 0, font: 'inherit' }}
-                >
-                  &rarr; Committee Directory
-                </button>
+                <a href="#facilities" onClick={(e) => handleScrollTo(e, 'facilities')}>
+                  Our Facilities
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => handleLink('facilities')}
-                  style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.85)', cursor: 'pointer', padding: 0, font: 'inherit' }}
-                >
-                  &rarr; Harold Wilson Room &amp; Boathouse
-                </button>
+                <a href="#events" onClick={(e) => handleScrollTo(e, 'events')}>
+                  Events &amp; Term Card
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => handleLink('academic')}
-                  style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.85)', cursor: 'pointer', padding: 0, font: 'inherit' }}
-                >
-                  &rarr; Graduate Colloquium &amp; Grants
-                </button>
+                <a href="#committee" onClick={(e) => handleScrollTo(e, 'committee')}>
+                  MCR Committee
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => handleLink('portal')}
-                  style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.85)', cursor: 'pointer', padding: 0, font: 'inherit' }}
-                >
-                  &rarr; Formal Hall &amp; Punt Bookings
-                </button>
+                <a href="#honorary" onClick={(e) => handleScrollTo(e, 'honorary')}>
+                  Honorary Membership
+                </a>
+              </li>
+              <li>
+                <a href="#contact" onClick={(e) => handleScrollTo(e, 'contact')}>
+                  Contact Us
+                </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 style={{
-              fontSize: '0.95rem',
-              fontWeight: 700,
-              textTransform: 'uppercase',
-              letterSpacing: '0.08em',
-              color: 'var(--color-gold-light)',
-              marginBottom: '16px',
-              borderBottom: '1px solid rgba(197, 155, 39, 0.3)',
-              paddingBottom: '8px'
-            }}>
-              Location &amp; Porters' Lodge
-            </h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '0.875rem', opacity: 0.85, lineHeight: 1.6 }}>
-              <div style={{ display: 'flex', gap: '10px' }}>
-                <IconMapPin size={20} style={{ flexShrink: 0, color: 'var(--color-gold-light)' }} />
+            <h4 className="footer-heading">Location &amp; Porters</h4>
+            <div className="footer-contact-list">
+              <div className="footer-contact-item">
+                <IconMapPin size={18} className="footer-icon" />
                 <span>
                   Jesus College, Turl Street<br />
                   Oxford, OX1 3DW, United Kingdom
                 </span>
               </div>
-              <div style={{ display: 'flex', gap: '10px' }}>
-                <IconMail size={18} style={{ flexShrink: 0, color: 'var(--color-gold-light)' }} />
-                <span>mcr.president@jesus.ox.ac.uk</span>
+              <div className="footer-contact-item">
+                <IconMail size={16} className="footer-icon" />
+                <a href={`mailto:${CONTACT_DATA.email}`}>{CONTACT_DATA.email}</a>
               </div>
-              <div>
-                <strong>Porters' Lodge (24/7):</strong><br />
-                +44 (0)1865 279700
+              <div className="footer-contact-item">
+                <IconPhone size={16} className="footer-icon" />
+                <span>Porters&rsquo; Lodge: {CONTACT_DATA.lodgePhone}</span>
               </div>
             </div>
           </div>
 
           <div>
-            <h4 style={{
-              fontSize: '0.95rem',
-              fontWeight: 700,
-              textTransform: 'uppercase',
-              letterSpacing: '0.08em',
-              color: 'var(--color-gold-light)',
-              marginBottom: '16px',
-              borderBottom: '1px solid rgba(197, 155, 39, 0.3)',
-              paddingBottom: '8px'
-            }}>
-              Welfare &amp; Emergency
-            </h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.85rem', opacity: 0.9 }}>
-              <p>
-                <strong>Jericho Health Centre (GP):</strong><br />
-                +44 (0)1865 311234
-              </p>
-              <p>
-                <strong>Oxford Nightline (8pm-8am):</strong><br />
-                +44 (0)1865 270270
-              </p>
-              <p>
-                <strong>University Security Services:</strong><br />
-                Emergency: +44 (0)1865 289999
-              </p>
+            <h4 className="footer-heading">Connect With Us</h4>
+            <div className="footer-social-links">
+              <a
+                href="https://instagram.com/jesuscollege_mcr"
+                target="_blank"
+                rel="noreferrer"
+                className="social-badge"
+              >
+                <IconInstagram size={18} />
+                <span>@jesuscollege_mcr</span>
+              </a>
+              <a
+                href="https://www.facebook.com/groups/jesuscollegemcr/"
+                target="_blank"
+                rel="noreferrer"
+                className="social-badge"
+              >
+                <IconFacebook size={18} />
+                <span>Jesus College MCR Facebook</span>
+              </a>
+              <a
+                href="https://twitter.com/JesusOxMCR"
+                target="_blank"
+                rel="noreferrer"
+                className="social-badge"
+              >
+                <IconTwitter size={18} />
+                <span>@JesusOxMCR</span>
+              </a>
             </div>
           </div>
         </div>
 
-        <div style={{
-          borderTop: '1px solid rgba(255, 255, 255, 0.12)',
-          paddingTop: '24px',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '16px',
-          fontSize: '0.8rem',
-          opacity: 0.75
-        }}>
-          <div>
-            &copy; {new Date().getFullYear()} Jesus College Middle Common Room (MCR), University of Oxford. All rights reserved.
-          </div>
-          <div style={{ display: 'flex', gap: '16px' }}>
-            <span>Privacy Policy</span>
+        <div className="footer-bottom">
+          <p>
+            &copy; {new Date().getFullYear()} Jesus College Middle Common Room (MCR), University of Oxford.
+          </p>
+          <div className="footer-bottom-links">
+            <a href="https://www.jesus.ox.ac.uk" target="_blank" rel="noreferrer">
+              Jesus College Oxford
+            </a>
             <span>•</span>
-            <span>Accessibility</span>
-            <span>•</span>
-            <span>Oxford Single Sign-On</span>
+            <a href="https://www.ox.ac.uk" target="_blank" rel="noreferrer">
+              University of Oxford
+            </a>
           </div>
         </div>
       </div>

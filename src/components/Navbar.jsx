@@ -1,144 +1,127 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Crest from './Crest';
 import {
-  IconSearch,
   IconMoon,
   IconSun,
   IconMenu,
-  IconX,
-  IconCalendar,
-  IconShield
+  IconX
 } from './Icons';
 
-export default function Navbar({
-  activePage,
-  setActivePage,
-  theme,
-  toggleTheme,
-  onOpenSearch
-}) {
+export default function Navbar({ theme, toggleTheme }) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'events', label: 'Term Card & Events' },
-    { id: 'freshers', label: 'Freshers Hub' },
-    { id: 'committee', label: 'Committee' },
-    { id: 'facilities', label: 'Facilities & Life' },
-    { id: 'academic', label: 'Academic & Colloquium' },
-    { id: 'welfare', label: 'Welfare & Support' },
-    { id: 'portal', label: 'Bookings & Portal' }
+    { id: 'home', label: 'Home', href: '#home' },
+    { id: 'about', label: 'About', href: '#about' },
+    { id: 'facilities', label: 'Facilities', href: '#facilities' },
+    { id: 'events', label: 'Events & Term Card', href: '#events' },
+    { id: 'committee', label: 'Committee', href: '#committee' },
+    { id: 'honorary', label: 'Honorary Membership', href: '#honorary' },
+    { id: 'contact', label: 'Contact', href: '#contact' }
   ];
 
-  const handleNavClick = (pageId) => {
-    setActivePage(pageId);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 30);
+
+      const sectionIds = ['home', 'about', 'facilities', 'events', 'committee', 'honorary', 'contact'];
+      const scrollPosition = window.scrollY + 120;
+
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sectionIds[i]);
+        if (el && el.offsetTop <= scrollPosition) {
+          setActiveSection(sectionIds[i]);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
     setMobileOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const element = document.getElementById(targetId);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   return (
-    <>
-      <aside aria-label="College Term Notice" className="term-notice-bar">
-        <div className="container">
-          <div className="term-notice-inner">
-            <div className="term-announcement">
-              <span className="term-badge">
-                <IconCalendar size={13} />
-                Michaelmas Term 2026 • Week 4
-              </span>
-              <span style={{ opacity: 0.9 }}>
-                Upcoming: <strong>Fifth Week Wine & Cheese</strong> (Fri Nov 20) &amp; <strong>Colloquium Talk Proposals Open</strong>
-              </span>
+    <header className={`navbar-header ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="container">
+        <div className="navbar-inner">
+          <a
+            href="#home"
+            className="brand-link"
+            onClick={(e) => handleNavClick(e, 'home')}
+          >
+            <Crest size={42} />
+            <div className="brand-titles">
+              <span className="brand-name">JESUS COLLEGE MCR</span>
+              <span className="brand-sub">Middle Common Room • Oxford</span>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', fontSize: '0.8rem' }}>
-              <span>Porch / Lodge: +44 (0)1865 279700</span>
-              <span style={{ color: 'var(--color-gold-light)' }}>•</span>
+          </a>
+
+          <nav className="nav-menu" aria-label="Primary Navigation">
+            {navItems.map((item) => (
               <a
-                href="#portal"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick('portal');
-                }}
-                style={{ color: 'var(--color-gold-light)', textDecoration: 'none', fontWeight: 600 }}
+                key={item.id}
+                href={item.href}
+                className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
+                onClick={(e) => handleNavClick(e, item.id)}
               >
-                Sign up for Formal Hall &rarr;
+                {item.label}
               </a>
-            </div>
-          </div>
-        </div>
-      </aside>
+            ))}
+          </nav>
 
-      <header className="navbar-header">
-        <div className="container">
-          <div className="navbar-inner">
-            <div
-              className="brand-link"
-              onClick={() => handleNavClick('home')}
-              role="button"
-              tabIndex={0}
-            >
-              <Crest size={44} />
-              <div className="brand-titles">
-                <span className="brand-name">JESUS COLLEGE MCR</span>
-                <span className="brand-sub">Middle Common Room • Oxford</span>
-              </div>
-            </div>
-
-            <nav className="nav-menu" aria-label="Primary Navigation">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  className={`nav-link ${activePage === item.id ? 'active' : ''}`}
-                  onClick={() => handleNavClick(item.id)}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </nav>
-
-            <div className="nav-actions">
-              <button
-                className="btn-icon"
-                onClick={onOpenSearch}
-                title="Quick Search (Events, Glossary, Reps)"
-                aria-label="Quick Search"
-              >
-                <IconSearch size={17} />
-              </button>
-
-              <button
-                className="btn-icon"
-                onClick={toggleTheme}
-                title={theme === 'dark' ? 'Switch to Light Theme' : 'Switch to Dark Theme'}
-                aria-label="Toggle Theme"
-              >
-                {theme === 'dark' ? <IconSun size={17} /> : <IconMoon size={17} />}
-              </button>
-
-              <button
-                className="mobile-toggle-btn"
-                onClick={() => setMobileOpen(!mobileOpen)}
-                aria-label="Toggle Mobile Navigation"
-              >
-                {mobileOpen ? <IconX size={22} /> : <IconMenu size={22} />}
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className={`mobile-nav-drawer ${mobileOpen ? 'open' : ''}`}>
-          {navItems.map((item) => (
+          <div className="nav-actions">
             <button
-              key={item.id}
-              className={`nav-link ${activePage === item.id ? 'active' : ''}`}
-              style={{ textAlign: 'left', width: '100%', padding: '12px 16px' }}
-              onClick={() => handleNavClick(item.id)}
+              className="btn-icon"
+              onClick={toggleTheme}
+              title={theme === 'dark' ? 'Switch to Light Theme' : 'Switch to Dark Theme'}
+              aria-label="Toggle Theme"
             >
-              {item.label}
+              {theme === 'dark' ? <IconSun size={18} /> : <IconMoon size={18} />}
             </button>
-          ))}
+
+            <button
+              className="mobile-toggle-btn"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Toggle Mobile Navigation"
+            >
+              {mobileOpen ? <IconX size={22} /> : <IconMenu size={22} />}
+            </button>
+          </div>
         </div>
-      </header>
-    </>
+      </div>
+
+      <div className={`mobile-nav-drawer ${mobileOpen ? 'open' : ''}`}>
+        {navItems.map((item) => (
+          <a
+            key={item.id}
+            href={item.href}
+            className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
+            style={{ textAlign: 'left', width: '100%', padding: '14px 20px', display: 'block' }}
+            onClick={(e) => handleNavClick(e, item.id)}
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
+    </header>
   );
 }
