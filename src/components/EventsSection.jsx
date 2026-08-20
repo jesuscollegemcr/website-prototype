@@ -55,6 +55,20 @@ export default function EventsSection() {
           <div className="section-divider" />
         </div>
 
+        {CALENDAR_DATA.notice && (
+          <div className="events-notice-banner">
+            <div className="events-notice-icon-box">
+              <IconSparkles size={20} className="events-notice-icon" />
+            </div>
+            <div className="events-notice-body">
+              <span className="events-notice-badge">Notice</span>
+              <p className="events-notice-text">
+                {CALENDAR_DATA.notice}
+              </p>
+            </div>
+          </div>
+        )}
+
         <div className="events-calendar-showcase">
           <div className="calendar-main-card">
             <div className="calendar-toolbar">

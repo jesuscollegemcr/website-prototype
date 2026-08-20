@@ -62,6 +62,7 @@ export const FACILITIES_DATA = [
 export const CALENDAR_DATA = {
   title: 'MCR Events & Social Calendar',
   term: 'Live MCR Calendar',
+  notice: "Freshers' Week schedule and Michaelmas term card is coming soon!",
   description: 'From weekly formal dinners and exchange banquets with Oxford & Cambridge colleges, to BOPs, graduate colloquia, pub quizzes, and weekend outings, explore the live Jesus MCR calendar below.',
   calendarId: '07fa50fa3019ceb820889ca068b653cda9021fbba7d121c8ea0c0e967dcff484@group.calendar.google.com',
   cid: 'MDdmYTUwZmEzMDE5Y2ViODIwODg5Y2EwNjhiNjUzY2RhOTAyMWZiYmE3ZDEyMWM4ZWEwYzBlOTY3ZGNmZjQ4NEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
