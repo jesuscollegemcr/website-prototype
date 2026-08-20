@@ -16,7 +16,7 @@ export default function Navbar({ theme, toggleTheme }) {
     { id: 'home', label: 'Home', href: '#home' },
     { id: 'about', label: 'About', href: '#about' },
     { id: 'facilities', label: 'Facilities', href: '#facilities' },
-    { id: 'events', label: 'Events & Term Card', href: '#events' },
+    { id: 'events', label: 'Events & Calendar', href: '#events' },
     { id: 'committee', label: 'Committee', href: '#committee' },
     { id: 'honorary', label: 'Honorary Membership', href: '#honorary' },
     { id: 'contact', label: 'Contact', href: '#contact' }

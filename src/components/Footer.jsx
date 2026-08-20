@@ -60,7 +60,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#events" onClick={(e) => handleScrollTo(e, 'events')}>
-                  Events &amp; Term Card
+                  Events &amp; Calendar
                 </a>
               </li>
               <li>

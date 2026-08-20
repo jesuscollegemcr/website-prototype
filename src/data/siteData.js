@@ -59,17 +59,24 @@ export const FACILITIES_DATA = [
   }
 ];
 
-export const TERM_CARD_DATA = {
-  term: 'Hilary Term 2025',
-  title: 'Current Term Card & Social Calendar',
-  description: 'From weekly formal dinners and exchange banquets with Oxford & Cambridge colleges, to BOPs, graduate research colloquia, pub quizzes, and weekend walks, there is always something happening in the Jesus MCR.',
-  image: 'https://static.wixstatic.com/media/78866e_ba79d66a641b4aeab3d3156fb58f31ae~mv2.png/v1/fill/w_1200,h_830,al_c,q_90,enc_avif,quality_auto/Hilary2025TermCard.png',
+export const CALENDAR_DATA = {
+  title: 'MCR Events & Social Calendar',
+  term: 'Live MCR Calendar',
+  description: 'From weekly formal dinners and exchange banquets with Oxford & Cambridge colleges, to BOPs, graduate colloquia, pub quizzes, and weekend outings, explore the live Jesus MCR calendar below.',
+  calendarId: '07fa50fa3019ceb820889ca068b653cda9021fbba7d121c8ea0c0e967dcff484@group.calendar.google.com',
+  cid: 'MDdmYTUwZmEzMDE5Y2ViODIwODg5Y2EwNjhiNjUzY2RhOTAyMWZiYmE3ZDEyMWM4ZWEwYzBlOTY3ZGNmZjQ4NEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
+  googleCalendarUrl: 'https://calendar.google.com/calendar/u/0?cid=MDdmYTUwZmEzMDE5Y2ViODIwODg5Y2EwNjhiNjUzY2RhOTAyMWZiYmE3ZDEyMWM4ZWEwYzBlOTY3ZGNmZjQ4NEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
+  googleCalendarAddUrl: 'https://calendar.google.com/calendar/r?cid=MDdmYTUwZmEzMDE5Y2ViODIwODg5Y2EwNjhiNjUzY2RhOTAyMWZiYmE3ZDEyMWM4ZWEwYzBlOTY3ZGNmZjQ4NEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
+  icalUrl: 'https://calendar.google.com/calendar/ical/07fa50fa3019ceb820889ca068b653cda9021fbba7d121c8ea0c0e967dcff484%40group.calendar.google.com/public/basic.ics',
+  webcalUrl: 'webcal://calendar.google.com/calendar/ical/07fa50fa3019ceb820889ca068b653cda9021fbba7d121c8ea0c0e967dcff484%40group.calendar.google.com/public/basic.ics',
   highlights: [
     { title: 'Weekly Formal Hall', day: 'Wednesdays & Fridays', time: '19:15', desc: 'Three-course dining in the Elizabethan Hall with fellow postgraduates.' },
     { title: 'Welfare Coffee & Cake', day: 'Sundays', time: '16:00', desc: 'Fresh pastries, artisanal coffee, and relaxed conversations in the Upper MCR.' },
     { title: 'Exchange Dinners', day: 'Alternate Weeks', time: '19:30', desc: 'Reciprocal dinners with sister colleges including Jesus College Cambridge.' },
   ]
 };
+
+export const TERM_CARD_DATA = CALENDAR_DATA;
 
 export const HONORARY_MEMBERSHIP_DATA = {
   title: 'Honorary Membership',

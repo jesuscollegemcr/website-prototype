@@ -73,7 +73,7 @@ export default function HeroSection() {
               onClick={(e) => handleScrollTo(e, 'events')}
             >
               <IconCalendar size={16} />
-              <span>Current Term Card</span>
+              <span>Events &amp; Calendar</span>
             </a>
           </div>
 
