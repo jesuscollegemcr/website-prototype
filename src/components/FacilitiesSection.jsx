@@ -4,13 +4,19 @@ import {
   IconGamepad,
   IconBookOpen,
   IconHeart,
-  IconMapPin
+  IconMapPin,
+  IconTv,
+  IconTarget
 } from './Icons';
 import { FACILITIES_DATA } from '../data/siteData';
 
 const iconMap = {
   coffee: <IconCoffee size={24} />,
   gamepad: <IconGamepad size={24} />,
+  tv: <IconTv size={24} />,
+  television: <IconTv size={24} />,
+  darts: <IconTarget size={24} />,
+  target: <IconTarget size={24} />,
   book: <IconBookOpen size={24} />,
   heart: <IconHeart size={24} />
 };

@@ -29,7 +29,7 @@ export const FACILITIES_DATA = [
     id: 'upper-mcr',
     title: 'The Upper MCR',
     location: 'Staircase XI, Second Quad (Main Site)',
-    description: 'The Upper MCR features comfortable Chesterfield sofas and wingback armchairs on which to relax or study. Enjoy a cup of tea or freshly brewed coffee prepared in our kitchenette and coffee machine, along with our complimentary supply of fresh fruits, teas, and biscuits.',
+    description: 'The Upper MCR features comfortable Chesterfield sofas and wingback armchairs on which to relax or study. Enjoy a cup of tea or coffee prepared in our kitchenette and coffee machine.',
     tag: 'Social & Study Lounge',
     icon: 'coffee'
   },
@@ -37,9 +37,9 @@ export const FACILITIES_DATA = [
     id: 'bunker',
     title: 'The Bunker',
     location: 'Staircase XI (Basement), Second Quad',
-    description: 'The Bunker contains a widescreen television, surround sound system, games consoles, a library of books, films, video games, and board games, plus cosy couches and bean bags. If you are feeling more active, challenge friends to pool, foosball, darts, or borrow supplies for paddle boarding and croquet.',
+    description: 'The Bunker contains a widescreen television, a sound system, games consoles, a library of board games, plus cosy couches. If you are feeling more active, challenge friends to pool, foosball, darts, or borrow supplies for croquet or spikeball.',
     tag: 'Games & Entertainment',
-    icon: 'gamepad'
+    icon: 'tv'
   },
   {
     id: 'study-room',
