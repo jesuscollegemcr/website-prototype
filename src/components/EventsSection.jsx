@@ -243,9 +243,9 @@ export default function EventsSection() {
             <div className="term-card-cta-box">
               <IconSparkles size={20} className="cta-icon" />
               <div>
-                <h4>Looking to organize an MCR event?</h4>
+                <h4>Looking to organize or co-host an MCR event?</h4>
                 <p>
-                  Have an idea for a talk, tasting, sports outing, or craft night? Reach out to our Social Secretaries or Reps below!
+                  Have an idea for a talk, tasting, sports outing, or craft night? Or are you another Oxford or Cambridge MCR looking to co-organize an exchange dinner or joint event? Reach out to our Social Secretaries or Reps below!
                 </p>
               </div>
             </div>

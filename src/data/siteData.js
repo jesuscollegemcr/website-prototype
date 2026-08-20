@@ -71,9 +71,9 @@ export const CALENDAR_DATA = {
   icalUrl: 'https://calendar.google.com/calendar/ical/07fa50fa3019ceb820889ca068b653cda9021fbba7d121c8ea0c0e967dcff484%40group.calendar.google.com/public/basic.ics',
   webcalUrl: 'webcal://calendar.google.com/calendar/ical/07fa50fa3019ceb820889ca068b653cda9021fbba7d121c8ea0c0e967dcff484%40group.calendar.google.com/public/basic.ics',
   highlights: [
-    { title: 'Weekly Formal Hall', day: 'Wednesdays & Fridays', time: '19:15', desc: 'Three-course dining in the Elizabethan Hall with fellow postgraduates.' },
-    { title: 'Welfare Coffee & Cake', day: 'Sundays', time: '16:00', desc: 'Fresh pastries, artisanal coffee, and relaxed conversations in the Upper MCR.' },
-    { title: 'Exchange Dinners', day: 'Alternate Weeks', time: '19:30', desc: 'Reciprocal dinners with sister colleges including Jesus College Cambridge.' },
+    { title: 'MCR Formal Dinners', day: 'Twice a term', time: '18:30', desc: 'Four-course dining in the Elizabethan Hall with fellow postgraduates.' },
+    { title: 'Welfare Tea', day: 'Tuesday', time: '18:00', desc: 'Snacks, drinks and chit-chat in the Upper MCR.' },
+    { title: 'Exchange Dinners', day: 'Twice a term', time: '18:30', desc: 'Reciprocal dinners with sister colleges.' },
   ]
 };
 
