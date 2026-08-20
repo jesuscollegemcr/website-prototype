@@ -28,7 +28,7 @@ export default function CommitteeSection() {
           <span className="section-badge">Leadership &amp; Representation</span>
           <h2 className="section-title">MCR Committee</h2>
           <p className="section-subtitle max-w-700">
-            The MCR Committee is an elected group of volunteers who cater to the needs of our members academically and socially, and liaise with the College Governing Body and SCR.
+            The MCR Committee is an elected group of volunteers who cater to the needs of our members academically and socially, and liaise with the College Governing Body.
           </p>
           <div className="section-divider" />
         </div>

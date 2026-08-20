@@ -15,7 +15,7 @@ export const COMMITTEE_MEMBERS = [
     role: 'Vice President',
     email: 'mcr.vice-president@jesus.ox.ac.uk',
     image: 'https://static.wixstatic.com/media/78866e_0b461e601b864ea6b9e02c82d1b99509~mv2.png/v1/crop/x_139,y_0,w_1211,h_1597/fill/w_546,h_720,al_c,q_90,enc_avif,quality_auto/empty_edited.png',
-    bio: 'Deputises for the President, oversees MCR operations, and liaises with college committees and other Oxford graduate common rooms.',
+    bio: 'Deputises for the President, oversees the MCR physical spaces, and liaises with college committees.',
     category: 'exec',
     isVacant: false
   },
@@ -27,6 +27,15 @@ export const COMMITTEE_MEMBERS = [
     image: 'https://static.wixstatic.com/media/78866e_cc39d7d9e8594eb681ee3df30a526f69~mv2.jpg/v1/crop/x_0,y_4,w_586,h_773/fill/w_546,h_720,al_c,q_85,enc_avif,quality_auto/Website%20bio.jpg',
     bio: 'Hello! My name is Jenna and I am currently a first year DPhil student in Clinical Neurosciences and the Jesus MCR treasurer. As Treasurer my responsibilities include preparing the annual MCR budget, authorising spending and transactions and keeping the account books up to date. Please feel free to reach out if you have any questions!',
     category: 'exec',
+    isVacant: false
+  },
+  {
+    id: 'sofia-gilardini',
+    name: 'Sofia Gilardini',
+    role: 'Dining Officer',
+    image: 'https://static.wixstatic.com/media/78866e_0b461e601b864ea6b9e02c82d1b99509~mv2.png/v1/crop/x_139,y_0,w_1211,h_1597/fill/w_546,h_720,al_c,q_90,enc_avif,quality_auto/empty_edited.png',
+    bio: 'Organises formal dining exchanges with Cambridge sister college and Oxford MCRs.',
+    category: 'social',
     isVacant: false
   },
   {
@@ -55,7 +64,7 @@ export const COMMITTEE_MEMBERS = [
     role: 'Sports Representative',
     email: 'mcr.sports-rep@jesus.ox.ac.uk',
     image: 'https://static.wixstatic.com/media/78866e_0b461e601b864ea6b9e02c82d1b99509~mv2.png/v1/crop/x_139,y_0,w_1211,h_1597/fill/w_546,h_720,al_c,q_90,enc_avif,quality_auto/empty_edited.png',
-    bio: 'Coordinates college sports teams (football, rugby, netball, squash, rowing), arranges sports outings, and manages MCR equipment and punt passes.',
+    bio: 'Coordinates college sports teams, arranges sports outings, and manages MCR equipment and punt passes.',
     category: 'operations',
     isVacant: false
   },
@@ -70,16 +79,8 @@ export const COMMITTEE_MEMBERS = [
   {
     id: 'social-secretary-1',
     name: 'Vacant',
-    role: 'Social Secretary (Entz)',
+    role: 'Social Secretary',
     bio: 'Coordinates the social calendar, themed parties, BOPs, pub crawls, and wine & cheese evenings.',
-    category: 'social',
-    isVacant: true
-  },
-  {
-    id: 'social-secretary-2',
-    name: 'Vacant',
-    role: 'Social Secretary (Dinners & Exchanges)',
-    bio: 'Organises formal dining exchanges with Cambridge sister colleges and Oxford MCRs.',
     category: 'social',
     isVacant: true
   },
@@ -104,6 +105,14 @@ export const COMMITTEE_MEMBERS = [
     name: 'Vacant',
     role: 'Equality & Diversity Officer',
     bio: 'Champions inclusion, attends EDI workshops, and organises diverse community events and brunches.',
+    category: 'reps',
+    isVacant: true
+  },
+  {
+    id: 'freshers-rep',
+    name: 'Vacant',
+    role: "Freshers' Representative",
+    bio: 'Represents first-year postgraduate students and supports new members settling into the MCR community.',
     category: 'reps',
     isVacant: true
   }
