@@ -53,7 +53,7 @@ export const FACILITIES_DATA = [
     id: 'welfare',
     title: 'Welfare & Wellbeing Provision',
     location: 'Throughout College & Welfare Lockers',
-    description: 'Our welfare provision includes dedicated Welfare Reps whom you can approach confidentially with any concerns, as well as our weekly welfare Coffee and Cake, care packages during term, and bookable Welfare Lockers on the main site.',
+    description: 'Our welfare provision includes dedicated Welfare Reps whom you can approach confidentially with any concerns, as well as our weekly welfare teas, and regular welfare brunches. Welfare Lockers are also available on the main site.',
     tag: 'Support & Wellbeing',
     icon: 'heart'
   }
