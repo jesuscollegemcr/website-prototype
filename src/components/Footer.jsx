@@ -38,9 +38,6 @@ export default function Footer() {
             <p className="footer-desc">
               The Middle Common Room (MCR) is the postgraduate community of Jesus College in the University of Oxford, representing over 300 graduate scholars and researchers.
             </p>
-            <p className="footer-motto">
-              &ldquo;Floreat Ecclesia, Vivat Rex, Habeat Jesus Gloriam&rdquo;
-            </p>
           </div>
 
           <div>

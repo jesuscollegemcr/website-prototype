@@ -68,7 +68,6 @@ export const TERM_CARD_DATA = {
     { title: 'Weekly Formal Hall', day: 'Wednesdays & Fridays', time: '19:15', desc: 'Three-course dining in the Elizabethan Hall with fellow postgraduates.' },
     { title: 'Welfare Coffee & Cake', day: 'Sundays', time: '16:00', desc: 'Fresh pastries, artisanal coffee, and relaxed conversations in the Upper MCR.' },
     { title: 'Exchange Dinners', day: 'Alternate Weeks', time: '19:30', desc: 'Reciprocal dinners with sister colleges including Jesus College Cambridge.' },
-    { title: 'Graduate Colloquium', day: 'Alternate Tuesdays', time: '18:00', desc: 'Short, engaging research talks by MCR members followed by college drinks.' }
   ]
 };
 
