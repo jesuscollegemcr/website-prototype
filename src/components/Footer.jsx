@@ -36,7 +36,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="footer-desc">
-              The Middle Common Room (MCR) is the postgraduate community of Jesus College in the University of Oxford, representing over 300 graduate scholars and researchers.
+              The Middle Common Room (MCR) is the postgraduate community of Jesus College in the University of Oxford, representing over 300 postgraduate students.
             </p>
           </div>
 
