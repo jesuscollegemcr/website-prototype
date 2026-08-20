@@ -14,7 +14,7 @@ export default function CommitteeSection() {
     { id: 'exec', label: 'Executive' },
     { id: 'social', label: 'Social' },
     { id: 'reps', label: 'Representatives & EDI' },
-    { id: 'operations', label: 'IT & Sports' }
+    { id: 'operations', label: 'Operations & IT' }
   ];
 
   const filteredActive = selectedCategory === 'all'
