@@ -89,11 +89,6 @@ export default function HeroSection() {
             </div>
             <div className="hero-stat-divider" />
             <div className="hero-stat-card">
-              <span className="hero-stat-number">50+</span>
-              <span className="hero-stat-label">Nationalities Represented</span>
-            </div>
-            <div className="hero-stat-divider" />
-            <div className="hero-stat-card">
               <span className="hero-stat-number">2</span>
               <span className="hero-stat-label">Dedicated Common Rooms</span>
             </div>

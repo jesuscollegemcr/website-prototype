@@ -1,7 +1,7 @@
 export const HERO_DATA = {
   title: 'Welcome to the Jesus College MCR',
   subtitle: 'The postgraduate community of Jesus College in the University of Oxford',
-  intro: 'The Middle Common Room (MCR) is the community of graduate students at Jesus College, Oxford. We have a membership of over 300 graduate students representing a diverse range of cultures and backgrounds. Our members study a wide variety of disciplines including English, Law, Economics, Education, Physics, Chemistry, Medicine, Zoology, History, Philosophy and Politics, to name but a few.',
+  intro: 'The Middle Common Room (MCR) is the community of graduate students at Jesus College, Oxford. We have a membership of over 300 graduate students representing a diverse range of cultures and backgrounds.',
   heroImage: 'https://static.wixstatic.com/media/78866e_43bc8f6f53b945cea17378bcbf91012f~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,enc_avif,quality_auto/78866e_43bc8f6f53b945cea17378bcbf91012f~mv2.jpg'
 };
 
