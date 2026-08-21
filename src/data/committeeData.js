@@ -82,14 +82,34 @@ export const COMMITTEE_MEMBERS = [
     role: 'Secretary',
     bio: 'Responsible for general meetings, minuting, constitutions, elections, and official communications.',
     category: 'exec',
+    spots: 1,
     isVacant: true
   },
   {
-    id: 'social-secretary-1',
+    id: 'social-secretary',
     name: 'Vacant',
     role: 'Social Secretary',
     bio: 'Coordinates the social calendar, themed parties, BOPs, pub crawls, and wine & cheese evenings.',
     category: 'social',
+    spots: 3,
+    isVacant: true
+  },
+  {
+    id: 'welfare-rep',
+    name: 'Vacant',
+    role: 'Welfare Representative',
+    bio: 'Provides confidential peer support, organises weekly welfare teas, wellbeing initiatives, and represents student welfare in college.',
+    category: 'reps',
+    spots: 2,
+    isVacant: true
+  },
+  {
+    id: 'freshers-rep',
+    name: 'Vacant',
+    role: 'First-Year Representative',
+    bio: 'Represents first-year postgraduate students and supports new members settling into the MCR community.',
+    category: 'reps',
+    spots: 2,
     isVacant: true
   },
   {
@@ -98,6 +118,7 @@ export const COMMITTEE_MEMBERS = [
     role: 'Environmental Officer',
     bio: 'Promotes sustainability initiatives, green policies in college, and environmental events.',
     category: 'reps',
+    spots: 1,
     isVacant: true
   },
   {
@@ -106,6 +127,7 @@ export const COMMITTEE_MEMBERS = [
     role: 'Computing Officer',
     bio: 'Manages MCR IT infrastructure, website maintenance, mailing lists, and tech in common rooms.',
     category: 'operations',
+    spots: 1,
     isVacant: true
   },
   {
@@ -114,6 +136,7 @@ export const COMMITTEE_MEMBERS = [
     role: 'Mature Students Representative',
     bio: 'Supports postgraduate students embarking on their studies at a later stage in life, organizing community events and peer integration.',
     category: 'reps',
+    spots: 1,
     isVacant: true
   },
   {
@@ -122,14 +145,7 @@ export const COMMITTEE_MEMBERS = [
     role: 'Equality & Diversity Officer',
     bio: 'Champions inclusion, attends EDI workshops, and organises diverse community events and brunches.',
     category: 'reps',
-    isVacant: true
-  },
-  {
-    id: 'freshers-rep',
-    name: 'Vacant',
-    role: "Freshers' Representative",
-    bio: 'Represents first-year postgraduate students and supports new members settling into the MCR community.',
-    category: 'reps',
+    spots: 1,
     isVacant: true
   }
 ];

@@ -21,6 +21,10 @@ export default function CommitteeSection() {
     ? activeMembers
     : activeMembers.filter((m) => m.category === selectedCategory);
 
+  const filteredVacant = selectedCategory === 'all'
+    ? vacantMembers
+    : vacantMembers.filter((m) => m.category === selectedCategory);
+
   return (
     <section id="committee" className="content-section section-alternate">
       <div className="container">
@@ -130,14 +134,16 @@ export default function CommitteeSection() {
                 </div>
 
                 <div className="vacant-cards-grid">
-                  {vacantMembers.map((vacant) => (
+                  {filteredVacant.map((vacant) => (
                     <div key={vacant.id} className="vacant-role-card">
                       <div className="vacant-card-top">
                         <span className="vacant-status-badge">Open Position</span>
                         <span className="vacant-category-tag">{vacant.category}</span>
                       </div>
 
-                      <h4 className="vacant-role-name">{vacant.role}</h4>
+                      <h4 className="vacant-role-name">
+                        {vacant.role}{vacant.spots > 1 ? ` (x${vacant.spots})` : ''}
+                      </h4>
                       <p className="vacant-role-desc">{vacant.bio}</p>
 
                       <div className="vacant-card-footer">
@@ -160,3 +166,5 @@ export default function CommitteeSection() {
     </section>
   );
 }
+
+
