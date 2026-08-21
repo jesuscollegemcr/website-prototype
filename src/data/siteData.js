@@ -2,7 +2,7 @@ export const HERO_DATA = {
   title: 'Welcome to the Jesus College MCR',
   subtitle: 'The postgraduate community of Jesus College in the University of Oxford',
   intro: 'The Middle Common Room (MCR) is the community of graduate students at Jesus College, Oxford. We have a membership of over 300 graduate students representing a diverse range of cultures and backgrounds.',
-  heroImage: 'https://static.wixstatic.com/media/78866e_43bc8f6f53b945cea17378bcbf91012f~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,enc_avif,quality_auto/78866e_43bc8f6f53b945cea17378bcbf91012f~mv2.jpg'
+  heroImage: '/pictures/first_quad.avif'
 };
 
 export const ABOUT_DATA = {
@@ -14,12 +14,28 @@ export const ABOUT_DATA = {
   ],
   images: [
     {
-      src: 'https://static.wixstatic.com/media/78866e_50ec39b487564453a9134b0d6539b745~mv2.jpg/v1/fill/w_900,h_570,al_c,q_85,enc_avif,quality_auto/cropped-IMG_0710.jpg',
-      alt: 'Jesus College Quad and MCR'
+      src: '/pictures/first_quad.avif',
+      alt: 'Jesus College First Quadrangle',
+      title: 'First Quadrangle',
+      subtitle: 'Historic 16th-century heart of Jesus College on Turl Street'
     },
     {
-      src: 'https://static.wixstatic.com/media/78866e_ec3858aa0f454de1bf9ddbea8833809b~mv2.jpg/v1/crop/x_39,y_0,w_2312,h_3156/fill/w_600,h_800,al_c,q_85,enc_avif,quality_auto/IMG_0490.jpg',
-      alt: 'Jesus College MCR Life'
+      src: '/pictures/hall.jpg',
+      alt: 'Jesus College Dining Hall',
+      title: 'The Dining Hall',
+      subtitle: 'Elizabethan hall for MCR formal dinners'
+    },
+    {
+      src: '/pictures/mcr_wall.avif',
+      alt: 'Jesus College Middle Common Room',
+      title: 'Middle Common Room',
+      subtitle: 'Dedicated common room, lounge, and social spaces for postgraduates'
+    },
+    {
+      src: '/pictures/ship_street.avif',
+      alt: 'Ship Street Centre, Jesus College',
+      title: 'Ship Street Centre',
+      subtitle: 'Postgraduate accommodation and modern college facilities'
     }
   ]
 };

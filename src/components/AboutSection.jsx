@@ -1,6 +1,7 @@
 import React from 'react';
 import { IconBookOpen, IconUsers } from './Icons';
 import { ABOUT_DATA } from '../data/siteData';
+import AboutCarousel from './AboutCarousel';
 
 export default function AboutSection() {
   return (
@@ -53,28 +54,8 @@ export default function AboutSection() {
             </div>
           </div>
 
-          <div className="about-images-col">
-            <div className="about-image-card primary-img">
-              <img
-                src={ABOUT_DATA.images[0].src}
-                alt={ABOUT_DATA.images[0].alt}
-                className="about-img"
-              />
-              <div className="about-image-caption">
-                Second Quad &amp; MCR Common Rooms
-              </div>
-            </div>
-
-            <div className="about-image-card secondary-img">
-              <img
-                src={ABOUT_DATA.images[1].src}
-                alt={ABOUT_DATA.images[1].alt}
-                className="about-img"
-              />
-              <div className="about-image-caption">
-                Postgraduate Life at Jesus
-              </div>
-            </div>
+          <div className="about-carousel-col">
+            <AboutCarousel images={ABOUT_DATA.images} />
           </div>
         </div>
       </div>

@@ -53,16 +53,23 @@ export default function CommitteeSection() {
           {filteredActive.map((member) => (
             <div key={member.id} className="committee-card">
               <div className="committee-img-box">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="committee-img"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'flex';
-                  }}
-                />
-                <div className="committee-img-fallback" style={{ display: 'none' }}>
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="committee-img"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      if (e.target.nextElementSibling) {
+                        e.target.nextElementSibling.style.display = 'flex';
+                      }
+                    }}
+                  />
+                ) : null}
+                <div
+                  className="committee-img-fallback"
+                  style={{ display: member.image ? 'none' : 'flex' }}
+                >
                   <span>{member.name.split(' ').map((n) => n[0]).join('')}</span>
                 </div>
                 <div className="committee-role-badge">
