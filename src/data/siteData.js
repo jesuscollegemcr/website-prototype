@@ -34,8 +34,8 @@ export const ABOUT_DATA = {
     {
       src: '/pictures/ship_street.avif',
       alt: 'Ship Street Centre, Jesus College',
-      title: 'Ship Street Centre',
-      subtitle: 'Postgraduate accommodation and modern college facilities'
+      title: 'Central Location',
+      subtitle: 'Jesus College is located in the heart of Oxford, just off Cornmarket Street and the High Street'
     }
   ]
 };
