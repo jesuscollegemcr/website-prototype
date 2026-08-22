@@ -143,6 +143,7 @@ export default function CommitteeSection() {
                         src={member.image}
                         alt={member.name}
                         className="committee-img"
+                        style={member.imagePosition ? { objectPosition: member.imagePosition } : undefined}
                         onError={(e) => {
                           e.target.style.display = 'none';
                           if (e.target.nextElementSibling) {
