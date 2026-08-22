@@ -46,7 +46,8 @@ export const COMMITTEE_MEMBERS = [
     id: 'alfie-wingfield',
     name: 'Alfie Wingfield',
     role: 'Publicity Officer',
-    bio: 'Manages MCR social media accounts, publicity campaigns, and online communications.',
+    image: '/pictures/committee/alfie_wingfield.jpg',
+    bio: 'I grew up in Brighton & Hove before moving to Exeter to study Natural Sciences. Now I\'m studying for a DPhil in Engineering Biology as part of the EngBio CDT. Outside of the lab, I\'m also a photographer.',
     category: 'operations',
     isVacant: false
   },
