@@ -12,8 +12,9 @@ export const COMMITTEE_MEMBERS = [
     id: 'christophe-muller',
     name: 'Christophe Muller',
     role: 'Vice President',
+    image: '/pictures/committee/chris_muller.jpg',
     email: 'mcr.vice-president@jesus.ox.ac.uk',
-    bio: 'Deputises for the President, oversees the MCR physical spaces, and liaises with college committees.',
+    bio: 'Hi, I\'m Chris, currently doing the second year of my StatML CDT. I speak French but ain\'t French: I\'m a Belgian who, after a few stops around Europe, arrived in Oxford in 2025. You’ll see me around college a lot, usually with some headphones on, so don’t hesitate to come say “bonjour”.',
     category: 'exec',
     isVacant: false
   },
