@@ -59,69 +59,89 @@ export default function Navbar({ theme, toggleTheme }) {
     }
   };
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && mobileOpen) {
+        setMobileOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [mobileOpen]);
+
   return (
-    <header className={`navbar-header ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="container">
-        <div className="navbar-inner">
-          <a
-            href="#home"
-            className="brand-link"
-            onClick={(e) => handleNavClick(e, 'home')}
-          >
-            <Crest size={42} />
-            <div className="brand-titles">
-              <span className="brand-name">JESUS COLLEGE MCR</span>
-              <span className="brand-sub">Middle Common Room • Oxford</span>
-            </div>
-          </a>
+    <>
+      <header className={`navbar-header ${isScrolled ? 'scrolled' : ''}`}>
+        <div className="container">
+          <div className="navbar-inner">
+            <a
+              href="#home"
+              className="brand-link"
+              onClick={(e) => handleNavClick(e, 'home')}
+            >
+              <Crest size={42} />
+              <div className="brand-titles">
+                <span className="brand-name">JESUS COLLEGE MCR</span>
+                <span className="brand-sub">Middle Common Room • Oxford</span>
+              </div>
+            </a>
 
-          <nav className="nav-menu" aria-label="Primary Navigation">
-            {navItems.map((item) => (
-              <a
-                key={item.id}
-                href={item.href}
-                className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
-                onClick={(e) => handleNavClick(e, item.id)}
+            <nav className="nav-menu" aria-label="Primary Navigation">
+              {navItems.map((item) => (
+                <a
+                  key={item.id}
+                  href={item.href}
+                  className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
+                  onClick={(e) => handleNavClick(e, item.id)}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+
+            <div className="nav-actions">
+              <button
+                className="btn-icon"
+                onClick={toggleTheme}
+                title={theme === 'dark' ? 'Switch to Light Theme' : 'Switch to Dark Theme'}
+                aria-label="Toggle Theme"
               >
-                {item.label}
-              </a>
-            ))}
-          </nav>
+                {theme === 'dark' ? <IconSun size={18} /> : <IconMoon size={18} />}
+              </button>
 
-          <div className="nav-actions">
-            <button
-              className="btn-icon"
-              onClick={toggleTheme}
-              title={theme === 'dark' ? 'Switch to Light Theme' : 'Switch to Dark Theme'}
-              aria-label="Toggle Theme"
-            >
-              {theme === 'dark' ? <IconSun size={18} /> : <IconMoon size={18} />}
-            </button>
-
-            <button
-              className="mobile-toggle-btn"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Toggle Mobile Navigation"
-            >
-              {mobileOpen ? <IconX size={22} /> : <IconMenu size={22} />}
-            </button>
+              <button
+                className="mobile-toggle-btn"
+                onClick={() => setMobileOpen(!mobileOpen)}
+                aria-label="Toggle Mobile Navigation"
+                aria-expanded={mobileOpen}
+              >
+                {mobileOpen ? <IconX size={22} /> : <IconMenu size={22} />}
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className={`mobile-nav-drawer ${mobileOpen ? 'open' : ''}`}>
-        {navItems.map((item) => (
-          <a
-            key={item.id}
-            href={item.href}
-            className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
-            style={{ textAlign: 'left', width: '100%', padding: '14px 20px', display: 'block' }}
-            onClick={(e) => handleNavClick(e, item.id)}
-          >
-            {item.label}
-          </a>
-        ))}
-      </div>
-    </header>
+        <div className={`mobile-nav-drawer ${mobileOpen ? 'open' : ''}`}>
+          {navItems.map((item) => (
+            <a
+              key={item.id}
+              href={item.href}
+              className={`nav-link mobile-link ${activeSection === item.id ? 'active' : ''}`}
+              onClick={(e) => handleNavClick(e, item.id)}
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </header>
+
+      {mobileOpen && (
+        <div
+          className="mobile-nav-backdrop"
+          onClick={() => setMobileOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+    </>
   );
 }

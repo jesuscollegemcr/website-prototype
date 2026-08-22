@@ -12,7 +12,12 @@ import {
 import { CALENDAR_DATA } from '../data/siteData';
 
 export default function EventsSection() {
-  const [viewMode, setViewMode] = useState('MONTH');
+  const [viewMode, setViewMode] = useState(() => {
+    if (typeof window !== 'undefined' && window.innerWidth < 640) {
+      return 'AGENDA';
+    }
+    return 'MONTH';
+  });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [copiedIcal, setCopiedIcal] = useState(false);
 

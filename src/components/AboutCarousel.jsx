@@ -53,6 +53,7 @@ export default function AboutCarousel({ images = [], autoPlayInterval = 5000 }) 
 
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX;
+    touchEndX.current = e.touches[0].clientX;
   };
 
   const handleTouchMove = (e) => {
