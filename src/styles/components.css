@@ -1478,7 +1478,7 @@
   color: var(--color-primary);
   text-decoration: none;
   font-weight: 600;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
   word-break: break-all;
   transition: color var(--transition-fast);
 }
@@ -1490,6 +1490,87 @@
 
 [data-theme='dark'] .committee-email-link {
   color: var(--color-gold-light);
+}
+
+.committee-links-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.committee-link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-muted);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.committee-link-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xs);
+}
+
+.committee-link-btn.committee-link-website:hover {
+  color: var(--color-primary);
+  border-color: var(--color-gold);
+  background: var(--color-gold-subtle);
+}
+
+.committee-link-btn.committee-link-linkedin:hover {
+  color: #0A66C2;
+  border-color: rgba(10, 102, 194, 0.4);
+  background: rgba(10, 102, 194, 0.08);
+}
+
+.committee-link-btn.committee-link-instagram:hover {
+  color: #E1306C;
+  border-color: rgba(225, 48, 108, 0.4);
+  background: rgba(225, 48, 108, 0.08);
+}
+
+.committee-link-btn.committee-link-scholar:hover {
+  color: #4285F4;
+  border-color: rgba(66, 133, 244, 0.4);
+  background: rgba(66, 133, 244, 0.08);
+}
+
+[data-theme='dark'] .committee-link-btn {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-text-muted);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme='dark'] .committee-link-btn.committee-link-website:hover {
+  color: var(--color-gold-light);
+  border-color: var(--color-gold);
+  background: rgba(229, 192, 93, 0.15);
+}
+
+[data-theme='dark'] .committee-link-btn.committee-link-linkedin:hover {
+  color: #70B5F9;
+  border-color: rgba(112, 181, 249, 0.4);
+  background: rgba(10, 102, 194, 0.22);
+}
+
+[data-theme='dark'] .committee-link-btn.committee-link-instagram:hover {
+  color: #FD5988;
+  border-color: rgba(253, 89, 136, 0.4);
+  background: rgba(225, 48, 108, 0.22);
+}
+
+[data-theme='dark'] .committee-link-btn.committee-link-scholar:hover {
+  color: #8AB4F8;
+  border-color: rgba(138, 180, 248, 0.4);
+  background: rgba(66, 133, 244, 0.22);
 }
 
 .committee-bio-wrapper {
@@ -2460,6 +2541,88 @@
   }
   [data-theme='dark'] .committee-mobile-role-pill {
     color: var(--color-gold-light);
+  }
+  .committee-mobile-meta-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 2px;
+  }
+  .committee-mobile-links-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .committee-mobile-link-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--color-surface-muted);
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+  .committee-mobile-link-btn:hover,
+  .committee-mobile-link-btn:active {
+    transform: scale(1.05);
+  }
+  .committee-mobile-link-btn.committee-link-website:hover,
+  .committee-mobile-link-btn.committee-link-website:active {
+    color: var(--color-primary);
+    border-color: var(--color-gold);
+    background: var(--color-gold-subtle);
+  }
+  .committee-mobile-link-btn.committee-link-linkedin:hover,
+  .committee-mobile-link-btn.committee-link-linkedin:active {
+    color: #0A66C2;
+    border-color: rgba(10, 102, 194, 0.4);
+    background: rgba(10, 102, 194, 0.08);
+  }
+  .committee-mobile-link-btn.committee-link-instagram:hover,
+  .committee-mobile-link-btn.committee-link-instagram:active {
+    color: #E1306C;
+    border-color: rgba(225, 48, 108, 0.4);
+    background: rgba(225, 48, 108, 0.08);
+  }
+  .committee-mobile-link-btn.committee-link-scholar:hover,
+  .committee-mobile-link-btn.committee-link-scholar:active {
+    color: #4285F4;
+    border-color: rgba(66, 133, 244, 0.4);
+    background: rgba(66, 133, 244, 0.08);
+  }
+  [data-theme='dark'] .committee-mobile-link-btn {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-text-muted);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+  [data-theme='dark'] .committee-mobile-link-btn.committee-link-website:hover,
+  [data-theme='dark'] .committee-mobile-link-btn.committee-link-website:active {
+    color: var(--color-gold-light);
+    border-color: var(--color-gold);
+    background: rgba(229, 192, 93, 0.15);
+  }
+  [data-theme='dark'] .committee-mobile-link-btn.committee-link-linkedin:hover,
+  [data-theme='dark'] .committee-mobile-link-btn.committee-link-linkedin:active {
+    color: #70B5F9;
+    border-color: rgba(112, 181, 249, 0.4);
+    background: rgba(10, 102, 194, 0.22);
+  }
+  [data-theme='dark'] .committee-mobile-link-btn.committee-link-instagram:hover,
+  [data-theme='dark'] .committee-mobile-link-btn.committee-link-instagram:active {
+    color: #FD5988;
+    border-color: rgba(253, 89, 136, 0.4);
+    background: rgba(225, 48, 108, 0.22);
+  }
+  [data-theme='dark'] .committee-mobile-link-btn.committee-link-scholar:hover,
+  [data-theme='dark'] .committee-mobile-link-btn.committee-link-scholar:active {
+    color: #8AB4F8;
+    border-color: rgba(138, 180, 248, 0.4);
+    background: rgba(66, 133, 244, 0.22);
   }
   .committee-mobile-email-btn {
     display: inline-flex;

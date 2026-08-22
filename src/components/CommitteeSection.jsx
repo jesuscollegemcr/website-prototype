@@ -1,6 +1,46 @@
 import React, { useState } from 'react';
-import { IconMail, IconChevronDown, IconChevronUp, IconSparkles } from './Icons';
+import {
+  IconMail,
+  IconChevronDown,
+  IconChevronUp,
+  IconSparkles,
+  IconLinkedin,
+  IconInstagram,
+  IconGlobe,
+  IconScholar
+} from './Icons';
 import { COMMITTEE_MEMBERS } from '../data/committeeData';
+
+const LINK_CONFIG = {
+  website: { label: 'Personal Website', Icon: IconGlobe },
+  scholar: { label: 'Google Scholar', Icon: IconScholar },
+  linkedin: { label: 'LinkedIn', Icon: IconLinkedin },
+  instagram: { label: 'Instagram', Icon: IconInstagram }
+};
+
+const normalizeLinkKey = (key) => {
+  if (key === 'insta') return 'instagram';
+  if (key === 'personalWebsite' || key === 'site') return 'website';
+  if (key === 'googleScholar') return 'scholar';
+  return key;
+};
+
+const getMemberLinks = (links) => {
+  if (!links) return [];
+  return Object.entries(links)
+    .map(([rawKey, url]) => {
+      const key = normalizeLinkKey(rawKey);
+      const config = LINK_CONFIG[key];
+      if (!url || !config) return null;
+      return {
+        key,
+        url,
+        label: config.label,
+        Icon: config.Icon
+      };
+    })
+    .filter(Boolean);
+};
 
 export default function CommitteeSection() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -89,6 +129,8 @@ export default function CommitteeSection() {
         <div className="committee-grid">
           {filteredActive.map((member) => {
             const isBioExpanded = !!expandedBios[member.id] || allExpanded;
+            const memberLinks = getMemberLinks(member.links);
+
             return (
               <div
                 key={member.id}
@@ -134,7 +176,26 @@ export default function CommitteeSection() {
                         </a>
                       )}
                     </div>
-                    <span className="committee-mobile-role-pill">{member.role}</span>
+                    <div className="committee-mobile-meta-row">
+                      <span className="committee-mobile-role-pill">{member.role}</span>
+                      {memberLinks.length > 0 && (
+                        <div className="committee-mobile-links-row" aria-label={`${member.name}'s profile links`}>
+                          {memberLinks.map(({ key, url, label, Icon }) => (
+                            <a
+                              key={key}
+                              href={url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`committee-mobile-link-btn committee-link-${key}`}
+                              title={`${member.name} - ${label}`}
+                              aria-label={`${member.name}'s ${label}`}
+                            >
+                              <Icon size={13} />
+                            </a>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
 
@@ -150,6 +211,24 @@ export default function CommitteeSection() {
                       <IconMail size={14} />
                       <span>{member.email}</span>
                     </a>
+                  )}
+
+                  {memberLinks.length > 0 && (
+                    <div className="committee-links-row committee-desktop-only" aria-label={`${member.name}'s profile links`}>
+                      {memberLinks.map(({ key, url, label, Icon }) => (
+                        <a
+                          key={key}
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`committee-link-btn committee-link-${key}`}
+                          title={`${member.name} - ${label}`}
+                          aria-label={`${member.name}'s ${label}`}
+                        >
+                          <Icon size={15} />
+                        </a>
+                      ))}
+                    </div>
                   )}
 
                   {member.bio && (

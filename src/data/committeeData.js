@@ -16,7 +16,13 @@ export const COMMITTEE_MEMBERS = [
     email: 'mcr.vice-president@jesus.ox.ac.uk',
     bio: 'Hi, I\'m Chris, currently doing the second year of my StatML CDT. I speak French but ain\'t French: I\'m a Belgian who, after a few stops around Europe, arrived in Oxford in 2025. You’ll see me around college a lot, usually with some headphones on, so don’t hesitate to come say “bonjour”.',
     category: 'exec',
-    isVacant: false
+    isVacant: false,
+    links: {
+      website: 'https://christophemuller.github.io/',
+      instagram: 'https://www.instagram.com/mullerchristophe21/',
+      linkedin: 'https://www.linkedin.com/in/christophe-muller/',
+      scholar: 'https://scholar.google.com/citations?user=TULXuW8AAAAJ&hl=en'
+    }
   },
   {
     id: 'jenna-huxley',
@@ -50,7 +56,12 @@ export const COMMITTEE_MEMBERS = [
     image: '/pictures/committee/alfie_wingfield.jpg',
     bio: 'I grew up in Brighton & Hove before moving to Exeter to study Natural Sciences. Now I\'m studying for a DPhil in Engineering Biology as part of the EngBio CDT. Outside of the lab, I\'m also a photographer.',
     category: 'operations',
-    isVacant: false
+    isVacant: false,
+    links: {
+      instagram: 'https://www.instagram.com/alfiejwingfield/',
+      linkedin: 'https://www.linkedin.com/in/alfie-wingfield/',
+    }
+
   },
   {
     id: 'rhys-inward',
