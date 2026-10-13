@@ -98,7 +98,7 @@ export const COMMITTEE_MEMBERS = [
     role: 'Social Secretary',
     bio: 'Coordinates the social calendar, themed parties, BOPs, pub crawls, and wine & cheese evenings.',
     category: 'social',
-    spots: 3,
+    spots: 2,
     isVacant: true
   },
   {
