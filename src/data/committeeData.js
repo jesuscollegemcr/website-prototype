@@ -15,7 +15,10 @@ export const COMMITTEE_MEMBERS = [
     image: '/pictures/committee/chris_muller.jpg',
     imagePosition: 'center 60%',
     email: 'mcr.vice-president@jesus.ox.ac.uk',
-    bio: 'Hi, I\'m Chris, currently doing the second year of my StatML CDT. I speak French but ain\'t French: I\'m a Belgian who, after a few stops around Europe, arrived in Oxford in 2025. You’ll see me around college a lot, usually with some headphones on, so don’t hesitate to come say “bonjour”.',
+    bio: 'Hi, I\'m Chris, currently doing the second year of my StatML CDT. I speak French but ain\'t French: I\'m a Belgian who, after a few stops around Europe, arrived in Oxford in 2025. You’ll see me around college a lot so don’t hesitate to come say “bonjour”. I’m also part of the OU Belgian Society, where you can find me with a belgian beer in hand.',
+    bioLinks: [
+      { text: 'OU Belgian Society', url: 'https://oxforduniversitybelgiansociety.github.io/' }
+    ],
     category: 'exec',
     isVacant: false,
     links: {

@@ -42,6 +42,19 @@ const getMemberLinks = (links) => {
     .filter(Boolean);
 };
 
+const renderBio = (bio, links = []) => links.reduce(
+  (parts, { text, url }) => parts.flatMap((part) => {
+    if (typeof part !== 'string' || !text) return part;
+    return part.split(text).flatMap((segment, index) => index === 0 ? [segment] : [
+      <a key={`${text}-${index}`} href={url} target="_blank" rel="noopener noreferrer" className="committee-bio-link">
+        {text}
+      </a>,
+      segment
+    ]);
+  }),
+  [bio]
+);
+
 export default function CommitteeSection() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [isVacantFolderOpen, setIsVacantFolderOpen] = useState(false);
@@ -235,7 +248,7 @@ export default function CommitteeSection() {
                   {member.bio && (
                     <div className="committee-bio-wrapper">
                       <p className={`committee-bio ${isBioExpanded ? 'expanded' : ''}`}>
-                        {member.bio}
+                        {renderBio(member.bio, member.bioLinks)}
                       </p>
                       <button
                         type="button"

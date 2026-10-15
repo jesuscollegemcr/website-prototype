@@ -1586,6 +1586,22 @@
   flex: 1;
 }
 
+.committee-bio-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.committee-bio-link:hover,
+.committee-bio-link:focus-visible {
+  color: var(--color-primary);
+}
+
+[data-theme='dark'] .committee-bio-link:hover,
+[data-theme='dark'] .committee-bio-link:focus-visible {
+  color: var(--color-gold-light);
+}
+
 .committee-bio-toggle-btn {
   display: none;
 }
