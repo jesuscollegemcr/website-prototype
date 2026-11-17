@@ -81,6 +81,8 @@ export const COMMITTEE_MEMBERS = [
     id: 'sam-field-gibson',
     name: 'Sam Field-Gibson',
     role: 'Equalities & Diversity Officer',
+    image: '/pictures/committee/sam_field_gibson.jpg',
+    imagePosition: 'center 45%',
     bio: 'Champions inclusion, attends EDI workshops, and organises diverse community events and brunches.',
     category: 'reps',
     isVacant: false
