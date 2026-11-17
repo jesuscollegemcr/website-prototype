@@ -8,7 +8,10 @@ import EventsSection from './components/EventsSection';
 import CommitteeSection from './components/CommitteeSection';
 import HonorarySection from './components/HonorarySection';
 import ContactSection from './components/ContactSection';
+import ConstitutionPage from './components/ConstitutionPage';
 import { IconChevronUp } from './components/Icons';
+
+const isConstitutionPage = window.location.pathname.replace(/\/+$/, '') === '/constitution';
 
 export default function App() {
   const [theme, setTheme] = useState(() => {
@@ -20,6 +23,20 @@ export default function App() {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('jesus_mcr_theme', theme);
   }, [theme]);
+
+  // Deep links like /#committee or /constitution#finance: the browser tries to
+  // jump before React renders, so scroll to the section once it exists.
+  useEffect(() => {
+    // Wait for web fonts: they reflow the page and would shift the target.
+    document.fonts.ready.then(() => {
+      const id = decodeURIComponent(window.location.hash.slice(1));
+      const element = id && document.getElementById(id);
+      if (element) {
+        const headerOffset = 80;
+        window.scrollTo({ top: element.getBoundingClientRect().top + window.pageYOffset - headerOffset });
+      }
+    });
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,16 +59,22 @@ export default function App() {
 
   return (
     <div className="app-wrapper">
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
+      <Navbar theme={theme} toggleTheme={toggleTheme} isConstitutionPage={isConstitutionPage} />
 
       <main className="main-content">
-        <HeroSection />
-        <AboutSection />
-        <FacilitiesSection />
-        <EventsSection />
-        <CommitteeSection />
-        <HonorarySection />
-        <ContactSection />
+        {isConstitutionPage ? (
+          <ConstitutionPage />
+        ) : (
+          <>
+            <HeroSection />
+            <AboutSection />
+            <FacilitiesSection />
+            <EventsSection />
+            <CommitteeSection />
+            <HonorarySection />
+            <ContactSection />
+          </>
+        )}
       </main>
 
       <Footer />

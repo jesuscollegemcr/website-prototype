@@ -11,6 +11,11 @@ export default function Footer() {
   const handleScrollTo = (e, targetId) => {
     e.preventDefault();
     const element = document.getElementById(targetId);
+    if (!element) {
+      // On another page: go back to the homepage section.
+      window.location.href = `/#${targetId}`;
+      return;
+    }
     if (element) {
       const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;
@@ -77,6 +82,9 @@ export default function Footer() {
                 <a href="#contact" onClick={(e) => handleScrollTo(e, 'contact')}>
                   Contact Us
                 </a>
+              </li>
+              <li>
+                <a href="/constitution">MCR Constitution</a>
               </li>
             </ul>
           </div>
