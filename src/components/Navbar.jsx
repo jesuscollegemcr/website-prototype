@@ -7,9 +7,9 @@ import {
   IconX
 } from './Icons';
 
-export default function Navbar({ theme, toggleTheme }) {
+export default function Navbar({ theme, toggleTheme, isConstitutionPage = false }) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState(isConstitutionPage ? 'constitution' : 'home');
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = [
@@ -19,7 +19,8 @@ export default function Navbar({ theme, toggleTheme }) {
     { id: 'events', label: 'Events & Calendar', href: '#events' },
     { id: 'committee', label: 'Committee', href: '#committee' },
     { id: 'honorary', label: 'Honorary Membership', href: '#honorary' },
-    { id: 'contact', label: 'Contact', href: '#contact' }
+    { id: 'contact', label: 'Contact', href: '#contact' },
+    { id: 'constitution', label: 'Constitution', href: '/constitution' }
   ];
 
   useEffect(() => {
@@ -44,9 +45,16 @@ export default function Navbar({ theme, toggleTheme }) {
   }, []);
 
   const handleNavClick = (e, targetId) => {
-    e.preventDefault();
     setMobileOpen(false);
+    // Separate pages (e.g. /constitution) use normal link navigation.
+    if (targetId === 'constitution') return;
+    e.preventDefault();
     const element = document.getElementById(targetId);
+    if (!element) {
+      // On another page: go back to the homepage section.
+      window.location.href = `/#${targetId}`;
+      return;
+    }
     if (element) {
       const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;

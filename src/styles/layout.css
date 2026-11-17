@@ -129,7 +129,7 @@ body {
 }
 
 .nav-link {
-  padding: 8px 12px;
+  padding: 8px 10px;
   border-radius: var(--radius-sm);
   font-size: 0.875rem;
   font-weight: 600;
@@ -340,13 +340,17 @@ body {
   box-shadow: var(--shadow-lg);
 }
 
-@media (max-width: 1080px) {
+/* The full menu (8 items) needs ~1,180px; below that, use the mobile toggle. */
+@media (max-width: 1240px) {
   .nav-menu {
     display: none;
   }
   .mobile-toggle-btn {
     display: flex;
   }
+}
+
+@media (max-width: 1080px) {
   .content-section {
     padding: 64px 0;
   }
