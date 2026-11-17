@@ -4,7 +4,7 @@ Postgraduate community website prototype for Jesus College in the University of 
 
 ## Live Website
 
-🔗 [https://jesuscollegemcr.github.io/website-prototype/](https://jesuscollegemcr.github.io/website-prototype/)
+🔗 [https://www.jesuscollegemcr.com](https://www.jesuscollegemcr.com)
 
 ---
 
