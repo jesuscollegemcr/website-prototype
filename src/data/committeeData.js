@@ -38,11 +38,92 @@ export const COMMITTEE_MEMBERS = [
     isVacant: false
   },
   {
-    id: 'sofia-gilardini',
-    name: 'Sofia Gilardini',
-    role: 'Dining Officer',
-    bio: 'Organises formal dining exchanges with Cambridge sister college and Oxford MCRs.',
+    id: 'maia-williams',
+    name: 'Maia Williams',
+    role: 'Secretary',
+    bio: 'Responsible for general meetings, minuting, constitutions, elections, and official communications.',
+    category: 'exec',
+    isVacant: false
+  },
+  {
+    id: 'rupali-batta',
+    name: 'Rupali Batta',
+    role: 'Social Secretary',
+    bio: 'Coordinates the social calendar, themed parties, BOPs, pub crawls, and wine & cheese evenings.',
     category: 'social',
+    isVacant: false
+  },
+  {
+    id: 'dan-clark',
+    name: 'Dan Clark',
+    role: 'Social Secretary',
+    bio: 'Coordinates the social calendar, themed parties, BOPs, pub crawls, and wine & cheese evenings.',
+    category: 'social',
+    isVacant: false
+  },
+  {
+    id: 'rotimi-kukoyi',
+    name: 'Rotimi Kukoyi',
+    role: 'Welfare Officer',
+    bio: 'Provides confidential peer support, organises weekly welfare teas, wellbeing initiatives, and represents student welfare in college.',
+    category: 'reps',
+    isVacant: false
+  },
+  {
+    id: 'shorief-ali',
+    name: 'Shorief Ali',
+    role: 'Welfare Officer',
+    bio: 'Provides confidential peer support, organises weekly welfare teas, wellbeing initiatives, and represents student welfare in college.',
+    category: 'reps',
+    isVacant: false
+  },
+  {
+    id: 'sam-field-gibson',
+    name: 'Sam Field-Gibson',
+    role: 'Equalities & Diversity Officer',
+    bio: 'Champions inclusion, attends EDI workshops, and organises diverse community events and brunches.',
+    category: 'reps',
+    isVacant: false
+  },
+  {
+    id: 'edward-anders',
+    name: 'Edward Anders',
+    role: 'IT Officer',
+    bio: 'Manages MCR IT infrastructure, website maintenance, mailing lists, and tech in common rooms.',
+    category: 'operations',
+    isVacant: false
+  },
+  {
+    id: 'rhys-inward',
+    name: 'Rhys Inward',
+    role: 'Sports Officer',
+    email: 'mcr.sports-rep@jesus.ox.ac.uk',
+    bio: 'Coordinates college sports teams, arranges sports outings, and manages MCR equipment and punt passes.',
+    category: 'operations',
+    isVacant: false
+  },
+  {
+    id: 'matthew-miles',
+    name: 'Matthew Miles',
+    role: 'First-Year Representative',
+    bio: 'Represents first-year postgraduate students and supports new members settling into the MCR community.',
+    category: 'reps',
+    isVacant: false
+  },
+  {
+    id: 'nasim-ali',
+    name: 'Nasim Ali',
+    role: 'First-Year Representative',
+    bio: 'Represents first-year postgraduate students and supports new members settling into the MCR community.',
+    category: 'reps',
+    isVacant: false
+  },
+  {
+    id: 'erika-nakata-moussis',
+    name: 'Erika Nakata Moussis',
+    role: 'Environment Officer',
+    bio: 'Promotes sustainability initiatives, green policies in college, and environmental events.',
+    category: 'reps',
     isVacant: false
   },
   {
@@ -69,12 +150,11 @@ export const COMMITTEE_MEMBERS = [
 
   },
   {
-    id: 'rhys-inward',
-    name: 'Rhys Inward',
-    role: 'Sports Representative',
-    email: 'mcr.sports-rep@jesus.ox.ac.uk',
-    bio: 'Coordinates college sports teams, arranges sports outings, and manages MCR equipment and punt passes.',
-    category: 'operations',
+    id: 'sofia-gilardini',
+    name: 'Sofia Gilardini',
+    role: 'Dining Officer',
+    bio: 'Organises formal dining exchanges with Cambridge sister college and Oxford MCRs.',
+    category: 'social',
     isVacant: false
   },
   {
@@ -87,75 +167,67 @@ export const COMMITTEE_MEMBERS = [
     isVacant: false
   },
   {
-    id: 'secretary',
-    name: 'Vacant',
-    role: 'Secretary',
-    bio: 'Responsible for general meetings, minuting, constitutions, elections, and official communications.',
-    category: 'exec',
-    spots: 1,
-    isVacant: true
-  },
-  {
-    id: 'social-secretary',
-    name: 'Vacant',
-    role: 'Social Secretary',
-    bio: 'Coordinates the social calendar, themed parties, BOPs, pub crawls, and wine & cheese evenings.',
+    id: 'shintaro-ae',
+    name: 'Shintaro Ae',
+    role: 'Board Game & Film Night Representative',
+    bio: 'Runs the regular MCR board game and film nights.',
     category: 'social',
-    spots: 2,
-    isVacant: true
+    isVacant: false
   },
   {
-    id: 'welfare-rep',
-    name: 'Vacant',
-    role: 'Welfare Representative',
-    bio: 'Provides confidential peer support, organises weekly welfare teas, wellbeing initiatives, and represents student welfare in college.',
-    category: 'reps',
-    spots: 2,
-    isVacant: true
-  },
-  {
-    id: 'freshers-rep',
-    name: 'Vacant',
-    role: 'First-Year Representative',
-    bio: 'Represents first-year postgraduate students and supports new members settling into the MCR community.',
-    category: 'reps',
-    spots: 2,
-    isVacant: true
-  },
-  {
-    id: 'environmental-officer',
-    name: 'Vacant',
-    role: 'Environmental Officer',
-    bio: 'Promotes sustainability initiatives, green policies in college, and environmental events.',
-    category: 'reps',
-    spots: 1,
-    isVacant: true
-  },
-  {
-    id: 'computing-officer',
-    name: 'Vacant',
-    role: 'Computing Officer',
-    bio: 'Manages MCR IT infrastructure, website maintenance, mailing lists, and tech in common rooms.',
-    category: 'operations',
-    spots: 1,
-    isVacant: true
-  },
-  {
-    id: 'mature-students-rep',
-    name: 'Vacant',
+    id: 'mahlia-garay',
+    name: 'Mahlia Garay',
     role: 'Mature Students Representative',
     bio: 'Supports postgraduate students embarking on their studies at a later stage in life, organizing community events and peer integration.',
     category: 'reps',
-    spots: 1,
-    isVacant: true
+    isVacant: false
   },
   {
-    id: 'edi-officer',
-    name: 'Vacant',
-    role: 'Equality & Diversity Officer',
-    bio: 'Champions inclusion, attends EDI workshops, and organises diverse community events and brunches.',
+    id: 'laura-brown',
+    name: 'Laura Brown',
+    role: 'Mature Students Representative',
+    bio: 'Supports postgraduate students embarking on their studies at a later stage in life, organizing community events and peer integration.',
     category: 'reps',
-    spots: 1,
-    isVacant: true
+    isVacant: false
+  },
+  {
+    id: 'laurence-dauti',
+    name: 'Laurence Dauti',
+    role: 'Faith Representative',
+    bio: 'Represents members of all faiths and none, and is a point of contact for faith-related questions and events.',
+    category: 'reps',
+    isVacant: false
+  },
+  {
+    id: 'juliette-st-andrew',
+    name: 'Juliette St Andrew',
+    role: 'Disabilities Representative',
+    bio: 'Represents disabled members and is a point of contact for accessibility questions and concerns.',
+    category: 'reps',
+    isVacant: false
+  },
+  {
+    id: 'manu-lema',
+    name: 'Manu Lema',
+    role: 'LGBTQ+ Representative',
+    bio: 'Represents LGBTQ+ members and is a point of contact for LGBTQ+ questions, concerns and events.',
+    category: 'reps',
+    isVacant: false
+  },
+  {
+    id: 'naimal-aslam',
+    name: 'Naimal Aslam',
+    role: 'BAME Representative',
+    bio: 'Represents BAME members and is a point of contact for questions, concerns and events relating to race and ethnicity.',
+    category: 'reps',
+    isVacant: false
+  },
+  {
+    id: 'emma-greally',
+    name: 'Emma Greally',
+    role: 'International Representative',
+    bio: 'Represents international students and helps them settle into Oxford and the MCR community.',
+    category: 'reps',
+    isVacant: false
   }
 ];
